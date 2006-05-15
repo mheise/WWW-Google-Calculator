@@ -1,0 +1,12 @@
+MANIFEST
+README
+LICENSE
+Todo
+Changes
+t/pod-coverage.t
+t/pod.t
+Build.PL
+Makefile.PL
+lib/WWW/Google/Calculator.pm
+t/01_load.t
+META.yml
