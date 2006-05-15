@@ -1,4 +1,7 @@
 Revision history for Perl module WWW::Google::Calculator
 
+0.02 2006-05-16T02:29:47+09:00
+     - Added missing dependency Class::Accessors::Fast to META.yml
+
 0.01 2006-05-15T07:26:50+09:00
      - initial release;

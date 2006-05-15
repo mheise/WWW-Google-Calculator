@@ -5,8 +5,9 @@ Module::Build->new(
     module_name => 'WWW::Google::Calculator',
     license     => 'perl',
     requires    => {
-        'HTML::TokeParser' => 0,
-        'WWW::Mechanize'   => 0,
-        URI                => 0,
+        'Class::Accessors::Fast' => 0,
+        'HTML::TokeParser'       => 0,
+        'WWW::Mechanize'         => 0,
+        URI                      => 0,
     },
 )->create_build_script;
