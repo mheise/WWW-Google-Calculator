@@ -7,7 +7,7 @@ use WWW::Mechanize;
 use HTML::TokeParser;
 use URI;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 __PACKAGE__->mk_accessors(qw/mech error/);
 
@@ -85,6 +85,9 @@ sub calc {
 
 sub parse_html {
     my ( $self, $html ) = @_;
+
+    $html =~ s!<sup>(.*?)</sup>!^$1!g;
+    $html =~ s!&#215;!*!g;
 
     my $res;
     my $p = HTML::TokeParser->new( \$html );

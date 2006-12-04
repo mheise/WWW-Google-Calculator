@@ -1,27 +1,14 @@
-unless (eval "use Module::Build::Compat 0.02; 1" ) {
-  print "This module requires Module::Build to install itself.\n";
+use inc::Module::Install;
+name 'WWW-Google-Calculator';
+all_from 'lib/WWW/Google/Calculator.pm';
 
-  require ExtUtils::MakeMaker;
-  my $yn = ExtUtils::MakeMaker::prompt
-    ('  Install Module::Build from CPAN?', 'y');
+requires 'Class::Accessor::Fast' => 0;
+requires 'HTML::TokeParser' => 0;
+requires 'WWW::Mechanize' => 0;
 
-  if ($yn =~ /^y/i) {
-    require Cwd;
-    require File::Spec;
-    require CPAN;
+build_requires 'Test::More';
 
-    # Save this 'cause CPAN will chdir all over the place.
-    my $cwd = Cwd::cwd();
-    my $makefile = File::Spec->rel2abs($0);
+use_test_base;
 
-    CPAN::Shell->install('Module::Build::Compat');
-
-    chdir $cwd or die "Cannot chdir() back to $cwd: $!";
-    exec $^X, $makefile, @ARGV;  # Redo now that we have Module::Build
-  } else {
-    warn " *** Cannot install without Module::Build.  Exiting ...\n";
-    exit 1;
-  }
-}
-Module::Build::Compat->run_build_pl(args => \@ARGV);
-Module::Build::Compat->write_makefile();
+auto_include;
+WriteAll;

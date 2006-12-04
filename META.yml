@@ -1,22 +1,17 @@
----
-name: WWW-Google-Calculator
-version: 0.03
-author:
-  - 'Daisuke Murase <typester@cpan.org>'
 abstract: Perl interface for Google calculator
+author: Daisuke Murase <typester@cpan.org>
+build_requires: 
+  Test::More: 0
+distribution_type: module
+generated_by: Module::Install version 0.64
 license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
+name: WWW-Google-Calculator
+no_index: 
+  directory: 
+    - inc
+    - t
+requires: 
   Class::Accessor::Fast: 0
   HTML::TokeParser: 0
-  URI: 0
   WWW::Mechanize: 0
-provides:
-  WWW::Google::Calculator:
-    file: lib/WWW/Google/Calculator.pm
-    version: 0.03
-generated_by: Module::Build version 0.2801
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+version: 0.04
