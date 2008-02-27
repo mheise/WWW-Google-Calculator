@@ -7,7 +7,7 @@ use WWW::Mechanize;
 use HTML::TokeParser;
 use URI;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 __PACKAGE__->mk_accessors(qw/mech error/);
 

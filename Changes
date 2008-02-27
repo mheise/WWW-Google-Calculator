@@ -1,5 +1,9 @@
 Revision history for Perl module WWW::Google::Calculator
 
+0.05 2008-02-27T10:34:16+09:00
+     - Added missing inc directory. I wrote ^inc in MANIFEST.SKIP.. poke me
+       (Reported by rjbs)
+
 0.04 2006-12-04T14:04:56+09:00
      - Added live test with real network
      - Fixed module break answer when it has multiplier (Reported by Torkild Retvedt)
